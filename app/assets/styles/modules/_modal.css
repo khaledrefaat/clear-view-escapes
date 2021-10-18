@@ -1,0 +1,117 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .94);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+
+    &--visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transform: scale(1);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .heading-2 {
+        display: flex;
+        align-items: center;
+    }
+
+    &__description {
+        max-width: 40rem;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .social-icons {
+        text-align: center;
+
+
+        &__icon {
+            background-color: var(--secondary-color);
+            width: 10rem;
+            height: 10rem;
+            display: inline-block;
+            position: relative;
+
+
+            @mixin atMedium {
+                width: 8rem;
+                height: 8rem;
+            }
+
+            @mixin atLarge {
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+
+        &__icon:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .facebook:hover {
+            background-color: #3b5998
+        }
+
+        .twitter:hover {
+            background-color: #55acee
+        }
+
+        .instagram:hover {
+            background-color: #e4405f
+        }
+
+        .youtube:hover {
+            background-color: #bb0000
+        }
+
+    }
+
+    &__close {
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        font-size: 5rem;
+        cursor: pointer;
+        color: var(--primary-color);
+        transform: scaleX(1.2);
+        transform-origin: 100% 0;
+        transition: color .2s ease-out;
+
+        @mixin atMedium {
+            font-size: 3rem;
+            top: 2%;
+            right: 2%;
+        }
+    }
+
+    &__close:hover {
+        color: var(--secondary-color);
+    }
+}

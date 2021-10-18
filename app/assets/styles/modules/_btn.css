@@ -1,0 +1,35 @@
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    display: inline-block;
+    transform: translateY(-2px);
+    transition: all .2s;
+
+    &:hover {
+        background-color: var(--primary-color-light);
+    }
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    }
+
+    
+    &__secondary {
+        background-color: var(--secondary-color);
+    }
+    &__secondary:hover {
+        background-color: var(--secondary-color-light);
+    }
+
+    &__secondary--medium{padding: .8rem 3rem;}
+    
+    &__secondary-large {
+        padding: 1.5rem 3rem;
+        font-size: 2rem;
+    }
+
+}

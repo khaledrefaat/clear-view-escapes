@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 31.25%;
+    /* 1rem = 5px */
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
+    /* by decreasing font percentage we make all fonts responsive without adding anymedia to any font */
+
+    @mixin atSmall {
+        font-size: 37.5%;
+        /* 1rem = 6px; */
+    }
+
+    @mixin atMedium {
+        font-size: 43.75%;
+        /* 1rem = 7px; */
+    }
+
+    @mixin atLarge {
+        font-size: 56.25%;
+        /* 1rem =  9px*/
+    }
+
+    @mixin atLargest {
+        font-size: 62.5%;
+        /* 1rem = 10px; */
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    pointer-events: none;
+}

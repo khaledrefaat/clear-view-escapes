@@ -1,0 +1,27 @@
+.our-beginning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &__founder {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        @mixin atMedium {flex-direction: row;}
+    }
+
+    &__founder--image-box {
+        @mixin atMedium {max-width: 34%}
+    }
+
+    &__founder--description {
+        margin-top: 3rem;
+        @mixin atMedium {max-width: 66%}
+        @mixin atMedium {margin-top: 0}
+
+        a {font-weight: 700;}
+    }
+}

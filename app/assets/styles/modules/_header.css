@@ -1,0 +1,244 @@
+.header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/*     height: 6vh; */
+
+	@mixin atMedium {
+		justify-content: flex-end;
+		background-color: rgba(10, 61, 98, .4);
+
+		&--dark {
+			background-color: var(--primary-color-dark);
+			overflow: hidden;
+		}
+
+		&--dark &__logo {
+			transform: translateX(-50%) scale(.75);
+			top: -40%;
+			padding: 2rem;
+		}
+	}
+
+	&__logo {
+		background-color: rgba(10, 61, 98, .8);
+		cursor: pointer;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%) scale(1.2);
+		width: 20rem;
+		padding: 2rem;
+		z-index: 3;
+
+		opacity: 0;
+		pointer-events: none;
+		visibility: hidden;
+		transition: all .3s ease-out;
+
+		@mixin atMedium {
+			left: 12%;
+			transform: transalteX(0);
+			width: 15rem;
+
+			opacity: 1;
+			pointer-events: all;
+			visibility: visible;
+		}
+	}
+
+	/* navbar style */
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		background-color: rgba(10, 61, 98, .5);
+		padding-top: 13rem;
+		transform: scale(1.2);
+		transition: all .3s ease-out;
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+
+		@mixin atMedium {
+			/* i made it here with grid layout to make the button come after the list */
+			display: grid;
+			grid-template-columns: repeat(2, max-content);
+			align-items: center;
+			justify-content: space-evenly;
+			padding-top: 0;
+			background-color: transparent;
+			width: 50%;
+
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+			transform: scale(1);
+		}
+	}
+
+	/* javascript toggle classes */
+
+	&__nav--visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+		transform: scale(1);
+	}
+
+	&__logo--visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+		transform: translateX(-50%) scale(1);
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: space-around;
+
+		position: relative;
+		z-index: 3;
+
+		@mixin atMedium {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
+	}
+
+	li {
+		transition: background-color .2s;
+		padding: 1rem .5rem;
+		background-color: rgba(10, 61, 98, .6);
+		/* our primary color in rgba */
+		margin: .5rem;
+
+		@mixin atMedium {
+			padding: 1.5rem 1rem;
+			background-color: transparent;
+			margin: 0;
+		}
+	}
+
+	li:hover {
+		background-color: var(--primary-color-light);
+
+		@mixin atMedium {
+			background-color: var(--primary-color);
+		}
+	}
+
+
+	a {
+		text-decoration: none;
+		font-size: 1.8rem;
+		font-weight: 300;
+		color: var(--white-color);
+	}
+
+	/* target class */
+	.is-current-link {
+		color: var(--secondary-color) !important;
+	}
+
+
+
+	.btn {
+		@mixin atMedium {
+			margin-right: 5rem;
+		}
+
+		@mixin atLargest {
+			margin-right: 0;
+		}
+	}
+
+	/* mobile nav */
+
+	&__nav--icon {
+		position: absolute;
+		z-index: 3;
+		top: 4rem;
+		right: 4rem;
+		cursor: pointer;
+		background-color: var(--primary-color);
+		width: 8rem;
+		height: 8rem;
+		border-radius: 50%;
+
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+
+		&-middle {
+			width: 4rem;
+			height: .4rem;
+			background-color: var(--white-color);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+			transform-origin: 0 50%;
+			transition: all .3s ease-out;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-bottom: 1rem;
+			width: 4rem;
+			height: .4rem;
+			background-color: var(--white-color);
+			transform-origin: 7% 40%;
+			transition: all .3s ease-out;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-top: 1.4rem;
+			width: 4rem;
+			height: .35rem;
+			background-color: var(--white-color);
+			transform-origin: 10% 100%;
+			transition: all .3s ease-out;
+		}
+
+		@mixin atMedium {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+
+	&__nav--icon-x {
+		&::before {
+			transform: translateX(-50%) rotate(40deg) scaleX(1.25);
+		}
+
+		&::after {
+			transform: translateX(-50%) rotate(-45deg) scaleX(1.25);
+		}
+
+		.header__nav--icon-middle {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.footer {
+    padding: 3rem 0;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 200;
+
+    @mixin atSmall {flex-direction: row;}
+
+    .btn {
+        margin-top: 2rem;
+        @mixin atSmall {
+            margin-top: 0;
+            margin-left: 4rem;
+        }
+    }
+
+    p {color: var(--white-color)}
+}

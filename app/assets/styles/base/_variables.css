@@ -1,0 +1,31 @@
+:root {
+    /* Colors */
+    --primary-color: #0a3d62;
+
+    --primary-color-dark: #07283f;
+
+    --primary-color-light: #346080;
+
+    --secondary-color: #e58e26;
+
+    --secondary-color-light: #e29a41;
+
+    --white-color: #fff;
+
+    --black-color: #000;
+
+
+    /* media */
+
+    --bp-largest: 75em;
+    /* 1200px */
+
+    --bp-large: 56.25em;
+    /* 900px */
+
+    --bp-medium: 46.875em;
+    /* 750px */
+
+    --bp-small: 34.375;
+    /* 550px */
+}

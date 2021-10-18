@@ -1,0 +1,94 @@
+.testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #CDD9E5;
+    padding: 10rem 0;
+/*     background-image: url('../../images/testimonials-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+
+    @mixin atMedium {
+        background: linear-gradient(rgba(205, 217, 229, .7), rgba(205, 217, 229, .7)) ,url('assets/images/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover; 
+        padding: 10rem 5rem;
+    }
+
+    &__box--container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 10rem;
+
+        @mixin atMedium {
+            flex-direction: row;
+        }
+    }
+
+    &__box {
+        background-color:rgba(255, 255, 255, .8);
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding: 0 5rem 3rem 5rem;
+
+
+
+        @mixin atMedium {
+            max-width: 35rem;
+            padding: 0 3rem 2rem 3rem;
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__box:not(:last-of-type) {
+        margin-bottom: 5rem;
+
+        @mixin atSmall{margin-bottom: 8rem;}
+
+        @mixin atMedium {
+            margin-right: 3rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__box img {
+/*         position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+        z-index: 2; */
+        border: .5rem solid var(--white-color);
+        border-radius: 50%;
+        max-width: 35%;
+        margin-top: -6%;
+
+        @mixin atMedium {
+            max-width: none;
+            margin-top: -30%;
+        }
+    }
+
+    &__person {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    &__time {
+        font-size: 1.6rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+    }
+
+    &__box p {
+        word-wrap: break-word;
+    }
+
+}
